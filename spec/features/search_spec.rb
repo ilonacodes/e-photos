@@ -10,8 +10,12 @@ RSpec.describe "search feature", type: :feature do
     first(".search-result")
     results = all(".search-result img")
     expect(results).not_to be_empty
-    results.each do |result|
-      expect(result.src).to eq("https://static.pexels.com/photos/445109/pexels-photo-445109.jpeg")
-    end
+
+    actual = results.map { |img| img['src'] }
+    expected = [
+      "https://static.pexels.com/photos/445109/pexels-photo-445109.jpeg",
+      "https://static.pexels.com/photos/336540/pexels-photo-336540.jpeg",
+    ]
+    expect(actual).to eq(expected)
   end
-end  
+end

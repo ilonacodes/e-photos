@@ -4,9 +4,21 @@ export const services = {
   searchService: null
 }
 
+export class MockSearchService {
+  search(searchQuery) {
+    const results = photoContent.filter(photo =>
+      photo.name.includes(searchQuery)
+    )
+
+    return {
+      then: fn => fn(results),
+    }
+  }
+}
+
 export class SearchService {
   search(searchQuery) {
-    const results = this.photoContent.filter(photo =>
+    const results = photoContent.filter(photo =>
       photo.name.includes(searchQuery)
     )
 
