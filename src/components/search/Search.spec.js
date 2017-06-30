@@ -4,7 +4,7 @@ import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
-import { Search } from './Search'
+import { Search, SearchResult } from './Search'
 import { actions } from './actions'
 import { services, MockSearchService } from './services'
 import { photoContent } from '../../Gallery'
@@ -21,13 +21,15 @@ describe('Search - behavior', () => {
       searchResults: [],
     })
     const component = shallow(<Search store={store} />).dive()
+    const inputComponent = component.find('SearchInput').dive()
+    const buttonComponent = component.find('SearchButton').dive()
 
-    component.find('input').simulate('change', {
+    inputComponent.find('input').simulate('change', {
       target: {
         value: 'girl'
       }
     })
-    component.find('button').simulate('click')
+    buttonComponent.find('button').simulate('click')
     const actual = store.getActions()
 
     const expected = [actions.searchResults([photoContent[0], photoContent[5]])]
@@ -43,15 +45,30 @@ describe('Search - behavior', () => {
     })
 
     const component = shallow(<Search store={store} />).dive()
+    const resultsComponent = component.find('SearchResults').dive()
 
-    const actual = component
-      .find('.search-result img')
-      .map(photo => photo.prop('src'))
+    const actual = resultsComponent
+      .find('SearchResult')
+      .map(photo => photo.prop('photo').src)
 
     const expected = [
       photoContent[0].src,
       photoContent[5].src,
     ]
+
+    expect(actual).toEqual(expected)
+  })
+})
+
+describe('SearchResult', () => {
+  it('renders a photo', () => {
+    const photo = photoContent[2]
+
+    const component = shallow(<SearchResult photo={photo} />)
+
+    const actual = component.find('img').prop('src')
+
+    const expected = photo.src
 
     expect(actual).toEqual(expected)
   })

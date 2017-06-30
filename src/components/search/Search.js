@@ -4,27 +4,45 @@ import { Link } from 'react-router'
 
 import { actions } from './actions'
 
+export const SearchInput = ({update}) => {
+  return <input
+    type="search"
+    id="search-input"
+    onChange={e => update(e.target.value)}
+  />
+}
+
+export const SearchButton = ({search}) => {
+  return <button
+    id="search-button"
+    onClick={() => search()}>
+    Search
+  </button>
+}
+
+export const SearchResult = ({photo}) => {
+  return <div className="search-result">
+    <img src={photo.src} />
+  </div>
+}
+
+export const SearchResults = ({results}) => {
+  return <div>
+    {results.map(photo =>
+      <SearchResult key={photo.id} photo={photo} />
+    )}
+  </div>
+}
+
 export const SearchComponent = ({search, searchResults}) => {
 
   let searchQuery
 
   return <div>
     <Link to="/">Photos</Link>
-    <input
-      type="search"
-      id="search-input"
-      onChange={e => searchQuery = e.target.value}
-    />
-    <button
-      id="search-button"
-      onClick={() => search(searchQuery)}>
-      Search
-    </button>
-    {searchResults.map(photo =>
-      <div className="search-result" key={photo.id}>
-        <img src={photo.src} />
-      </div>)
-    }
+    <SearchInput update={value => searchQuery = value} />
+    <SearchButton search={() => search(searchQuery)} />
+    <SearchResults results={searchResults}/>
   </div>
 }
 
