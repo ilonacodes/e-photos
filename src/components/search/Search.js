@@ -1,57 +1,57 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router'
+import React from "react";
+import {connect} from "react-redux";
+import {Link} from "react-router";
 
-import { actions } from './actions'
+import {actions} from "./actions";
 
 export const SearchInput = ({update}) => {
-  return <input
-    type="search"
-    id="search-input"
-    onChange={e => update(e.target.value)}
-  />
+    return <input
+        type="search"
+        id="search-input"
+        onChange={e => update(e.target.value)}
+    />
 }
 
 export const SearchButton = ({search}) => {
-  return <button
-    id="search-button"
-    onClick={() => search()}>
-    Search
-  </button>
+    return <button
+        id="search-button"
+        onClick={() => search()}>
+        Search
+    </button>
 }
 
 export const SearchResult = ({photo}) => {
-  return <div className="search-result">
-    <img src={photo.src} />
-  </div>
+    return <div className="search-result">
+        <img src={photo.src}/>
+    </div>
 }
 
 export const SearchResults = ({results}) => {
-  return <div>
-    {results.map(photo =>
-      <SearchResult key={photo.id} photo={photo} />
-    )}
-  </div>
+    return <div>
+        {results.map(photo =>
+            <SearchResult key={photo.id} photo={photo}/>
+        )}
+    </div>
 }
 
 export const SearchComponent = ({search, searchResults}) => {
 
-  let searchQuery
+    let searchQuery
 
-  return <div>
-    <Link to="/">Photos</Link>
-    <SearchInput update={value => searchQuery = value} />
-    <SearchButton search={() => search(searchQuery)} />
-    <SearchResults results={searchResults}/>
-  </div>
+    return <div>
+        <Link to="/">Photos</Link>
+        <SearchInput update={value => searchQuery = value}/>
+        <SearchButton search={() => search(searchQuery)}/>
+        <SearchResults results={searchResults}/>
+    </div>
 }
 
 export const Search = connect(
-  ({searchResults}) => ({
-    searchResults,
-  }),
+    ({searchResults}) => ({
+        searchResults,
+    }),
 
-  dispatch => ({
-    search: searchQuery => dispatch(actions.search(searchQuery))
-  }),
+    dispatch => ({
+        search: searchQuery => dispatch(actions.search(searchQuery))
+    }),
 )(SearchComponent)
