@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8c8a90c-b690-413d-92d7-b24a934dfd59" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/features/Gemfile" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/features/Gemfile.lock" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spec/examples.txt" afterPath="$PROJECT_DIR$/features/spec/examples.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spec/features/search_spec.rb" afterPath="$PROJECT_DIR$/features/spec/features/search_spec.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spec/spec_helper.rb" afterPath="$PROJECT_DIR$/features/spec/spec_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/preview/Preview.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/preview/Preview.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/preview/actions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/preview/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bundle.js" afterPath="$PROJECT_DIR$/public/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Search.js" afterPath="$PROJECT_DIR$/src/components/search/Search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Search.spec.js" afterPath="$PROJECT_DIR$/src/components/search/Search.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/services.js" afterPath="$PROJECT_DIR$/src/components/search/services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,65 +25,61 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.29608938">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="e-photos.iml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/e-photos.iml">
+        <leaf>
+          <file leaf-file-name="Preview.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/preview/Preview.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Preview.spec.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/preview/Preview.spec.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="372">
+                  <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/preview/actions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="search_spec.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/features/spec/features/search_spec.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="243">
-                  <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.scss" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/scss/app.scss">
+          <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/preview/services.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
-                  <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+                  <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="actions.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.1/gems/capybara-2.14.4/lib/capybara/node/actions.rb">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="28" />
-                  <folding />
+                <state relative-caret-position="495">
+                  <caret line="33" column="52" lean-forward="true" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -98,11 +88,23 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Search.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/search/Search.js">
+          <file leaf-file-name="Search.spec.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/search/Search.spec.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+                <state relative-caret-position="144">
+                  <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/search/actions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -111,38 +113,18 @@
           <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/search/services.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+                <state relative-caret-position="102">
+                  <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Gallery.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Gallery.js">
+          <file leaf-file-name="Search.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/search/Search.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="35" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Search.spec.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/search/Search.spec.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="341">
-                  <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+                <state relative-caret-position="-481">
+                  <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -156,6 +138,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -182,11 +165,16 @@
         <option value="$PROJECT_DIR$/features/spec/features/search_spec.rb" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/search/Search.js" />
         <option value="$PROJECT_DIR$/src/scss/app.scss" />
         <option value="$PROJECT_DIR$/src/components/search/Search.spec.js" />
-        <option value="$PROJECT_DIR$/src/components/search/services.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/components/preview/actions.js" />
+        <option value="$PROJECT_DIR$/src/components/search/services.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/search/Search.js" />
+        <option value="$PROJECT_DIR$/src/components/preview/services.js" />
+        <option value="$PROJECT_DIR$/src/components/preview/Preview.js" />
+        <option value="$PROJECT_DIR$/src/components/preview/Preview.spec.js" />
       </list>
     </option>
   </component>
@@ -205,6 +193,9 @@
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -261,7 +252,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e-photos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="preview" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -953,23 +970,11 @@
       <updated>1498930853523</updated>
       <workItem from="1498930857008" duration="524000" />
       <workItem from="1498931410060" duration="1012000" />
-      <workItem from="1498932478821" duration="2779000" />
+      <workItem from="1498932478821" duration="5989000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Karma_tests - 2017.07.01 at 19h 53m 10s.xml">
-      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="Karma_tests - 2017.07.01 at 19h 53m 13s.xml">
-      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="Karma_tests - 2017.07.01 at 19h 53m 18s.xml">
-      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="Karma_tests - 2017.07.01 at 20h 49m 54s.xml">
-      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
     <history-entry file="Karma_tests - 2017.07.01 at 20h 51m 47s.xml">
       <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
@@ -979,18 +984,30 @@
     <history-entry file="Karma_tests - 2017.07.01 at 20h 53m 59s.xml">
       <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="search_feature_is_possible_to_find_photos__features - 2017.07.01 at 20h 15m 44s.xml">
-      <configuration name="search feature is possible to find photos: features" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Karma_tests - 2017.07.01 at 22h 01m 51s.xml">
+      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="search_feature_is_possible_to_find_photos__features - 2017.07.01 at 20h 16m 32s.xml">
-      <configuration name="search feature is possible to find photos: features" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Karma_tests - 2017.07.01 at 22h 05m 34s.xml">
+      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
-    <history-entry file="search_feature_is_possible_to_find_photos__features - 2017.07.01 at 20h 20m 47s.xml">
-      <configuration name="search feature is possible to find photos: features" configurationId="RSpecRunConfigurationType" />
+    <history-entry file="Karma_tests - 2017.07.01 at 22h 05m 54s.xml">
+      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Karma_tests - 2017.07.01 at 22h 06m 47s.xml">
+      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Karma_tests - 2017.07.01 at 22h 07m 05s.xml">
+      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Karma_tests - 2017.07.01 at 22h 07m 09s.xml">
+      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Karma_tests - 2017.07.01 at 22h 08m 11s.xml">
+      <configuration name="Karma tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4315000" />
+    <option name="totallyTimeSpent" value="7525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -1064,7 +1081,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1087,13 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="35" lean-forward="false" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="false" />
           </folding>
@@ -1118,14 +1130,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,14 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/e-photos.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,30 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/spec/features/search_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1248,7 +1223,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/actions.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/spec/features/search_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e-photos.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1256,35 +1271,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Search.js">
+    <entry file="file://$PROJECT_DIR$/src/components/search/Search.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="144">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/search/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="52" lean-forward="true" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        <state relative-caret-position="102">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Search.spec.js">
+    <entry file="file://$PROJECT_DIR$/src/components/search/Search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="-481">
+          <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/components/preview/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        <state relative-caret-position="210">
+          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/preview/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/preview/Preview.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/preview/Preview.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

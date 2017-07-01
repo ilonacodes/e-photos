@@ -11,8 +11,10 @@ import {Search} from "./components/search/Search";
 import {searchReducer} from "./components/search/reducers";
 import {counter} from "./reducer";
 import {SearchService, services as searchServices} from "./components/search/services";
+import {PreviewService, services as previewServices} from "./components/preview/services";
 
 searchServices.searchService = new SearchService()
+previewServices.previewService = new PreviewService()
 
 const store = createStore(
     combineReducers({

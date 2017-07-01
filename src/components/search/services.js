@@ -1,7 +1,7 @@
-import {photoContent} from "../../Gallery";
+import {photoContent} from "../../Gallery"
 
 export const services = {
-    searchService: null
+    searchService: null,
 }
 
 export class MockSearchService {
@@ -19,13 +19,6 @@ export class MockSearchService {
 
 export class SearchService {
     search(searchQuery) {
-        const results = photoContent.filter(photo =>
-            photo.name.includes(searchQuery) ||
-            photo.tags.includes(searchQuery)
-        )
-
-        return {
-            then: fn => fn(results),
-        }
+        return new MockSearchService().search(searchQuery)
     }
 }
