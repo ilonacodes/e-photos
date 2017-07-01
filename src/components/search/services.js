@@ -7,7 +7,8 @@ export const services = {
 export class MockSearchService {
     search(searchQuery) {
         const results = photoContent.filter(photo =>
-            photo.name.includes(searchQuery)
+            photo.name.includes(searchQuery) ||
+            photo.tags.includes(searchQuery)
         )
 
         return {
@@ -19,7 +20,8 @@ export class MockSearchService {
 export class SearchService {
     search(searchQuery) {
         const results = photoContent.filter(photo =>
-            photo.name.includes(searchQuery)
+            photo.name.includes(searchQuery) ||
+            photo.tags.includes(searchQuery)
         )
 
         return {

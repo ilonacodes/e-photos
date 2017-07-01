@@ -38,10 +38,7 @@
     "test": "karma start",
     "webpack": "webpack -w",
     "start": "cd public && python -m SimpleHTTPServer",
-    "react-addons-test-utils": "^15.5.1",
-    "react-test-renderer": "^15.5.4",
-    "redux-devtools": "^3.4.0",
-    "redux-mock-store": "^1.2.3"
+    "scss": "sass --watch src/scss/app.scss:public/app.css"
   },
   "author": "",
   "license": "MIT"

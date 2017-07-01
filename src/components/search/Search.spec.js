@@ -35,6 +35,26 @@ describe('Search - behavior', () => {
         expect(actual).toEqual(expected)
     })
 
+    it('dispatches a search action when button is pressed - by tags', () => {
+        const store = mockStore({
+            searchResults: [],
+        })
+        const component = shallow(<Search store={store}/>).dive()
+        const inputComponent = component.find('SearchInput').dive()
+        const buttonComponent = component.find('SearchButton').dive()
+
+        inputComponent.find('input').simulate('change', {
+            target: {
+                value: 'trip'
+            }
+        })
+        buttonComponent.find('button').simulate('click')
+        const actual = store.getActions()
+
+        const expected = [actions.searchResults([photoContent[1], photoContent[7], photoContent[8]])]
+        expect(actual).toEqual(expected)
+    })
+
     it('renders searchResults', () => {
         const store = mockStore({
             searchResults: [

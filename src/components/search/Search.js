@@ -27,7 +27,7 @@ export const SearchResult = ({photo}) => {
 }
 
 export const SearchResults = ({results}) => {
-    return <div>
+    return <div className="search-results">
         {results.map(photo =>
             <SearchResult key={photo.id} photo={photo}/>
         )}
@@ -38,7 +38,7 @@ export const SearchComponent = ({search, searchResults}) => {
 
     let searchQuery
 
-    return <div>
+    return <div className="search-container">
         <Link to="/">Photos</Link>
         <SearchInput update={value => searchQuery = value}/>
         <SearchButton search={() => search(searchQuery)}/>
