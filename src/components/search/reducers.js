@@ -1,4 +1,4 @@
-import {t} from "./actions";
+import {t} from "./actions"
 
 export const searchReducer = (state = [], action = {}) => {
 

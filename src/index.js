@@ -12,6 +12,8 @@ import {searchReducer} from "./components/search/reducers";
 import {counter} from "./reducer";
 import {SearchService, services as searchServices} from "./components/search/services";
 import {PreviewService, services as previewServices} from "./components/preview/services";
+import {Preview} from "./components/preview/Preview";
+import {previewReducer} from "./components/preview/reducers";
 
 searchServices.searchService = new SearchService()
 previewServices.previewService = new PreviewService()
@@ -20,6 +22,7 @@ const store = createStore(
     combineReducers({
         counter,
         searchResults: searchReducer,
+        photos: previewReducer,
         routing: routerReducer,
     }),
     applyMiddleware(thunk, routerMiddleware(hashHistory)),
@@ -31,6 +34,7 @@ const Main =
     <Provider store={store}>
         <Router history={history}>
             <Route path='/' component={Search}/>
+            <Route path='/preview/:id' component={Preview}/>
             <Route path='/counter' component={App}/>
         </Router>
     </Provider>

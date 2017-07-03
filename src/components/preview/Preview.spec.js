@@ -17,15 +17,50 @@ describe('Preview - behavior', () => {
 
     it("dispatches a preview action when did not fetch yet", () => {
         const store = mockStore({
-            photos: {}
+            photos: {
+                4: photoContent[3]
+            }
         })
-        const routerParams = {id: 3}
+        const routerParams = {id: "3"}
 
         shallow(<Preview store={store} params={routerParams}/>).dive()
         const actual = store.getActions()
 
-        const expected = [actions.previewPhoto(photoContent[2])]
+        const expected = [actions.previewPhotoLoaded(photoContent[2])]
         expect(actual).toEqual(expected)
     })
 
+    it("does not dispatch a preview action when already fetched", () => {
+        const store = mockStore({
+            photos: {
+                4: photoContent[3],
+                3: photoContent[2]
+            }
+        })
+        const routerParams = {id: "3"}
+
+        shallow(<Preview store={store} params={routerParams}/>).dive()
+        const actual = store.getActions()
+
+        const expected = []
+        expect(actual).toEqual(expected)
+    })
+
+    it("renders a photo preview when a photo preview has already fetched", () => {
+        const store = mockStore({
+            photos: {
+                4: photoContent[3],
+                3: photoContent[2]
+            }
+        })
+
+        const routerParams = {id: "3"}
+
+        const component = shallow(<Preview store={store} params={routerParams}/>).dive()
+
+        const actual = component.find('img').prop('src')
+
+        const expected = photoContent[2].src
+        expect(actual).toEqual(expected)
+    })
 })
