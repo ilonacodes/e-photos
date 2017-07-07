@@ -1,8 +1,8 @@
-import React from "react"
-import {connect} from "react-redux"
-import {Link} from "react-router"
+import React from "react";
+import {connect} from "react-redux";
+import {Link} from "react-router";
 
-import {actions} from "./actions"
+import {actions} from "./actions";
 
 export const SearchInput = ({update}) => {
     return <input
@@ -22,7 +22,9 @@ export const SearchButton = ({search}) => {
 
 export const SearchResult = ({photo}) => {
     return <div className="search-result">
-        <img src={photo.src}/>
+        <Link to={`/preview/${photo.id}`} className="search-result-link">
+            <img src={photo.src}/>
+        </Link>
     </div>
 }
 
