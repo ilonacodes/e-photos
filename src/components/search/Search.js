@@ -36,15 +36,30 @@ export const SearchResults = ({results}) => {
     </div>
 }
 
+
 export const SearchComponent = ({search, searchResults}) => {
 
     let searchQuery
 
     return <div className="search-container">
-        <Link to="/">Photos</Link>
-        <SearchInput update={value => searchQuery = value}/>
-        <SearchButton search={() => search(searchQuery)}/>
-        <SearchResults results={searchResults}/>
+        <div className="logo">
+            <h1>E-PHOTOS</h1>
+        </div>
+        <div className="description"><i>The stock of HD-Photos. Find what you need.</i></div>
+        <div className="search">
+            <SearchInput update={value => searchQuery = value}/>
+            <SearchButton search={() => search(searchQuery)}/>
+        </div>
+        <div className="tags">
+            <a href="#">science</a>
+            <a href="#">art</a>
+            <a href="#">books</a>
+            <a href="#">city</a>
+            <a href="#">hipster</a>
+        </div>
+        <div className="search-results">
+            <SearchResults results={searchResults}/>
+        </div>
     </div>
 }
 
