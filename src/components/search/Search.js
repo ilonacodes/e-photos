@@ -6,7 +6,7 @@ import {actions} from "./actions";
 
 export const SearchInput = ({update}) => {
     return <input
-        type="search"
+        type="text"
         id="search-input"
         onChange={e => update(e.target.value)}
     />
@@ -36,34 +36,62 @@ export const SearchResults = ({results}) => {
     </div>
 }
 
-
-export const SearchComponent = ({search, searchResults}) => {
+export const Search = ({search}) => {
 
     let searchQuery
 
-    return <div className="search-container">
-        <div className="logo">
-            <h1>E-PHOTOS</h1>
-        </div>
-        <div className="description"><i>The stock of HD-Photos. Find what you need.</i></div>
-        <div className="search">
-            <SearchInput update={value => searchQuery = value}/>
-            <SearchButton search={() => search(searchQuery)}/>
-        </div>
-        <div className="tags">
-            <a href="#">science</a>
-            <a href="#">art</a>
-            <a href="#">books</a>
-            <a href="#">city</a>
-            <a href="#">hipster</a>
-        </div>
-        <div className="search-results">
-            <SearchResults results={searchResults}/>
-        </div>
+    return <div className="search">
+        <SearchInput update={value => searchQuery = value}/>
+        <SearchButton search={() => search(searchQuery)}/>
     </div>
 }
 
-export const Search = connect(
+export const SearchTags = ({search}) => {
+    return <div className="tags">
+        <a href="#" onClick={() => search("science")}>science</a>
+        <a href="#" onClick={() => search("art")}>art</a>
+        <a href="#" onClick={() => search("books")}>books</a>
+        <a href="#" onClick={() => search("city")}>city</a>
+        <a href="#" onClick={() => search("hipster")}>hipster</a>
+    </div>
+}
+
+export const Logo = ({}) => {
+    return <div className="logo">
+        <h1>E-PHOTOS</h1>
+    </div>
+}
+
+export const Description = ({}) => {
+    return <div className="description"><i>The stock of HD-Photos. Find what you need.</i></div>
+}
+
+export const SearchPageComponent = ({search, searchResults}) => {
+
+    if (searchResults.length === 0) {
+
+        return <div className="search-container">
+            <Logo />
+            <Description />
+            <Search className="search" search={search}/>
+            <SearchTags className="tags" search={search}/>
+        </div>
+
+    } else {
+
+        return <div className="search-container-row">
+            <div className="row">
+                <Logo />
+                <Search search={search}/>
+            </div>
+            <div className="search-results">
+                <SearchResults results={searchResults}/>
+            </div>
+        </div>
+    }
+}
+
+export const SearchPage = connect(
     ({searchResults}) => ({
         searchResults,
     }),
@@ -71,4 +99,4 @@ export const Search = connect(
     dispatch => ({
         search: searchQuery => dispatch(actions.search(searchQuery))
     }),
-)(SearchComponent)
+)(SearchPageComponent)

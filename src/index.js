@@ -7,7 +7,7 @@ import {routerMiddleware, routerReducer, syncHistoryWithStore} from "react-route
 import thunk from "redux-thunk";
 
 import {App} from "./App";
-import {Search} from "./components/search/Search";
+import {SearchPage} from "./components/search/Search";
 import {searchReducer} from "./components/search/reducers";
 import {counter} from "./reducer";
 import {SearchService, services as searchServices} from "./components/search/services";
@@ -33,7 +33,7 @@ const history = syncHistoryWithStore(hashHistory, store)
 const Main =
     <Provider store={store}>
         <Router history={history}>
-            <Route path='/' component={Search}/>
+            <Route path='/' component={SearchPage}/>
             <Route path='/preview/:id' component={Preview}/>
             <Route path='/counter' component={App}/>
         </Router>

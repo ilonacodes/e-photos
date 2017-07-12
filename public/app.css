@@ -72,4 +72,67 @@ body {
       align-items: center;
       padding: 10px; }
 
+.search-container-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap; }
+  .search-container-row .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; }
+    .search-container-row .row .logo h1 {
+      width: 100%;
+      color: #333;
+      font-size: 60px;
+      display: flex;
+      margin-top: 50px; }
+    .search-container-row .row .search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin-top: 50px; }
+      .search-container-row .row .search input {
+        width: 100%;
+        background-color: #E9E9E9;
+        padding: 10px 100px 10px 20px;
+        border-radius: 10px;
+        margin-right: 10px;
+        font-size: 1rem;
+        text-align: left;
+        border: 1px solid #888; }
+        .search-container-row .row .search input:focus {
+          outline: none;
+          border: 1px solid #333; }
+      .search-container-row .row .search #search-button {
+        background-color: #36bd8e;
+        padding: 10px 40px;
+        border-radius: 10px;
+        font-size: 1rem;
+        border: 1px solid #2b9570;
+        color: #f8f8f8; }
+        .search-container-row .row .search #search-button:focus {
+          outline: none;
+          border: 2px solid #2b9570; }
+        .search-container-row .row .search #search-button:hover {
+          background-color: #57cfa5;
+          border: 1px solid #2b9570; }
+  .search-container-row .search-results {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    align-self: center;
+    margin-top: 15px; }
+    .search-container-row .search-results .search-result img {
+      height: 550px;
+      width: 800px;
+      align-items: center;
+      padding: 10px;
+      order: -1; }
+
 /*# sourceMappingURL=app.css.map */

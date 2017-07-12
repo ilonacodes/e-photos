@@ -3,14 +3,14 @@ import {shallow} from "enzyme";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 
-import {Search, SearchResult} from "./Search";
+import {SearchPage, SearchResult} from "./Search";
 import {actions} from "./actions";
 import {MockSearchService, services} from "./services";
 import {photoContent} from "../../Gallery";
 
 const mockStore = configureMockStore([thunk])
 
-describe('Search - behavior', () => {
+describe('SearchPage - behavior', () => {
     beforeEach(() => {
         services.searchService = new MockSearchService(photoContent)
     })
@@ -19,7 +19,7 @@ describe('Search - behavior', () => {
         const store = mockStore({
             searchResults: [],
         })
-        const component = shallow(<Search store={store}/>).dive()
+        const component = shallow(<SearchPage store={store}/>).dive()
         const inputComponent = component.find('SearchInput').dive()
         const buttonComponent = component.find('SearchButton').dive()
 
@@ -39,7 +39,7 @@ describe('Search - behavior', () => {
         const store = mockStore({
             searchResults: [],
         })
-        const component = shallow(<Search store={store}/>).dive()
+        const component = shallow(<SearchPage store={store}/>).dive()
         const inputComponent = component.find('SearchInput').dive()
         const buttonComponent = component.find('SearchButton').dive()
 
@@ -63,7 +63,7 @@ describe('Search - behavior', () => {
             ]
         })
 
-        const component = shallow(<Search store={store}/>).dive()
+        const component = shallow(<SearchPage store={store}/>).dive()
         const resultsComponent = component.find('SearchResults').dive()
 
         const actual = resultsComponent
