@@ -46,10 +46,10 @@ body {
       text-align: left;
       border: 1px solid #888;
 
-        &:focus {
-          outline: none;
-          border: 1px solid #333;
-        }
+      &:focus {
+        outline: none;
+        border: 1px solid #333;
+      }
     }
 
     #search-button {
@@ -115,14 +115,17 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
 
-    .logo h1 {
-      width: 100%;
-      color: #333;
-      font-size: 60px;
-      display: flex;
+    .logo {
+
       margin-top: 50px;
+
+      h1 {
+        width: 100%;
+        color: #333;
+        font-size: 60px;
+        display: flex;
+      }
     }
 
     .search {

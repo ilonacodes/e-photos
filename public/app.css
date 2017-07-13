@@ -82,14 +82,14 @@ body {
   .search-container-row .row {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around; }
-    .search-container-row .row .logo h1 {
-      width: 100%;
-      color: #333;
-      font-size: 60px;
-      display: flex;
+    align-items: center; }
+    .search-container-row .row .logo {
       margin-top: 50px; }
+      .search-container-row .row .logo h1 {
+        width: 100%;
+        color: #333;
+        font-size: 60px;
+        display: flex; }
     .search-container-row .row .search {
       display: flex;
       justify-content: center;
