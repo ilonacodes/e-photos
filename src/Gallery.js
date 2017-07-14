@@ -27,7 +27,7 @@ export const photoContent = [
         src: "https://static.pexels.com/photos/234541/-ancient-meditation-architecture-234541.jpeg",
         name: "meditation",
         id: 5,
-        tags: ["boy", "meditation", "ancient"]
+        tags: ["boy", "meditation", "ancient", "girl"]
     },
     {
         src: "https://static.pexels.com/photos/336540/pexels-photo-336540.jpeg",
@@ -57,6 +57,6 @@ export const photoContent = [
         src: "https://static.pexels.com/photos/27954/pexels-photo-27954.jpg",
         name: "beach",
         id: 10,
-        tags: ["sea", "house", "resort"]
+        tags: ["sea", "house", "resort", "trip"]
     }
 ];

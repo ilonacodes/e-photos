@@ -121,7 +121,6 @@ body {
     .logo {
 
       margin-top: 50px;
-      width: 50%;
 
       h1 {
         color: #333;
@@ -134,7 +133,6 @@ body {
       display: flex;
       margin-top: 50px;
       margin-left: 50px;
-      width: 50%;
 
       input {
         background-color: #E9E9E9;
@@ -158,7 +156,6 @@ body {
         font-size: 1rem;
         border: 1px solid darken(#36bd8e, 10%);
         color: #f8f8f8;
-        width: 50%;
 
         &:focus {
           outline: none;
@@ -175,20 +172,30 @@ body {
 
   .search-results {
     display: flex;
-    align-items: center;
-    align-content: center;
-    flex-direction: row;
-    align-self: center;
-    margin-top: 15px;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center;
 
     .search-result img {
-      height: 320px;
-      width: 475px;
-      align-items: center;
-      padding: 10px;
+      flex: 1 1 18%;
+      height: 350px;
+      margin: 5px;
+      width: 500px;
     }
   }
-
 }
+
+@media screen and (max-width: 1000px) {
+  .search-container-row {
+    .search-results {
+      .search-result img {
+        width: 750px;
+        height: 500px;
+      }
+    }
+  }
+}
+
+
 
 
