@@ -3,11 +3,14 @@ import {connect} from "react-redux";
 import {Link} from "react-router";
 
 import {actions} from "./actions";
+import {TopBar} from "../common/TopBar";
+import {Logo} from "../common/Logo";
 
 export const SearchInput = ({update}) => {
     return <input
         type="text"
         id="search-input"
+        placeholder="Search for photos..."
         onChange={e => update(e.target.value)}
     />
 }
@@ -46,21 +49,14 @@ export const Search = ({search}) => {
     </div>
 }
 
-export const SearchTags = ({search}) => {
+export const SearchTags = ({search, tags}) => {
     return <div className="tags">
-        <a href="#" onClick={() => search("science")}>science</a>
-        <a href="#" onClick={() => search("art")}>art</a>
-        <a href="#" onClick={() => search("books")}>books</a>
-        <a href="#" onClick={() => search("city")}>city</a>
-        <a href="#" onClick={() => search("hipster")}>hipster</a>
+        {tags.map(tag =>
+            <a href="#" onClick={() => search(tag)} key={tag}>{tag}</a>
+        )}
     </div>
 }
 
-export const Logo = ({}) => {
-    return <div className="logo">
-        <h1>E-PHOTOS</h1>
-    </div>
-}
 
 export const Description = ({}) => {
     return <div className="description"><i>The stock of HD-Photos. Find what you need.</i></div>
@@ -70,20 +66,19 @@ export const SearchPageComponent = ({search, searchResults}) => {
 
     if (searchResults.length === 0) {
 
+        const tags = ["science", "art", "books", "city", "hipster"];
+
         return <div className="search-container">
             <Logo />
             <Description />
             <Search className="search" search={search}/>
-            <SearchTags className="tags" search={search}/>
+            <SearchTags className="tags" search={search} tags={tags}/>
         </div>
 
     } else {
 
         return <div className="search-container-row">
-            <div className="row">
-                <Logo />
-                <Search search={search}/>
-            </div>
+            <TopBar search={search}/>
             <div className="search-results">
                 <SearchResults results={searchResults}/>
             </div>

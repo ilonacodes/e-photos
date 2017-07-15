@@ -3,7 +3,7 @@ export const photoContent = [
         src: "https://static.pexels.com/photos/445109/pexels-photo-445109.jpeg",
         name: "girl",
         id: 1,
-        tags: ["girl", "woman", "blue"]
+        tags: ["girl", "woman", "blue", "hat", "nature", "smoke", "trees", "hand", "art"]
     },
     {
         src: "https://static.pexels.com/photos/410986/pexels-photo-410986.jpeg",

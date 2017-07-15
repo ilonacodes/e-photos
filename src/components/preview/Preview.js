@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from "react-redux";
 
 import {actions} from "./actions";
+import {SearchTags} from "../search/Search";
+import {TopBar} from "../common/TopBar";
 
 export const PreviewComponent = (props) => {
 
@@ -10,8 +12,26 @@ export const PreviewComponent = (props) => {
         return <div>Loading..</div>
     }
 
+    const search = () => null
+
     return <div className="preview">
-        <img src={props.photo.src}/>
+        <div className="search-container-row">
+            <TopBar search={search}/>
+        </div>
+        <div className="preview-content">
+            <div className="preview-photo">
+                <img src={props.photo.src}/>
+            </div>
+            <div className="preview-sidebar">
+                <div className="related-searches">
+                    <strong>Related Searches:</strong>
+                    <SearchTags search={search} tags={props.photo.tags}/>
+                </div>
+                <div className="buy">
+                    <button id="buy-button">Buy</button>
+                </div>
+            </div>
+        </div>
     </div>
 }
 

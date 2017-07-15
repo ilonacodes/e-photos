@@ -1,0 +1,91 @@
+.preview {
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+
+  .preview-content {
+
+    display: flex;
+    width: 100%;
+
+    .preview-photo {
+
+      flex: 2;
+      justify-content: center;
+      text-align: center;
+
+      img {
+        height: auto;
+        margin: 5px;
+        width: 90%;
+      }
+    }
+
+    .preview-sidebar {
+
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+      align-self: center;
+
+      .related-searches {
+
+        strong {
+          font-size: 24px;
+        }
+
+        display: flex;
+        flex-flow: column wrap;
+        text-align: center;
+
+        .tags {
+          display: flex;
+          flex: 1;
+          flex-flow: row wrap;
+          justify-content: center;
+          margin-top: 5%;
+
+          a {
+            padding-right: 20px;
+            text-decoration: none;
+            color: #51ADED;
+            font-size: 18px;
+
+            &:hover {
+              color: darken(#51ADED, 10%);
+            }
+          }
+        }
+      }
+
+      .buy {
+
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+
+        #buy-button {
+          background-color: #36bd8e;
+          padding: 20px 60px;
+          border-radius: 10px;
+          font-size: 2rem;
+          border: 1px solid darken(#36bd8e, 10%);
+          color: #f8f8f8;
+
+          &:focus {
+            outline: none;
+            border: 2px solid darken(#36bd8e, 10%);
+          }
+
+          &:hover {
+            background-color: lighten(#36bd8e, 10%);
+            border: 1px solid darken(#36bd8e, 10%);
+          }
+        }
+      }
+    }
+  }
+}

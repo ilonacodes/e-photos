@@ -1,3 +1,7 @@
+@import "_preview";
+@import "_search";
+@import "_top-bar";
+
 * {
   box-sizing: border-box;
 }
@@ -39,43 +43,6 @@ body {
     opacity: .8;
   }
 
-  .search {
-    input {
-      width: 100%;
-      background-color: #E9E9E9;
-      padding: 10px 100px 10px 20px;
-      border-radius: 10px;
-      margin-right: 10px;
-      font-size: 1rem;
-      text-align: left;
-      border: 1px solid #888;
-
-      &:focus {
-        outline: none;
-        border: 1px solid #333;
-      }
-    }
-
-    #search-button {
-      background-color: #36bd8e;
-      padding: 10px 40px;
-      border-radius: 10px;
-      font-size: 1rem;
-      border: 1px solid darken(#36bd8e, 10%);
-      color: #f8f8f8;
-
-      &:focus {
-        outline: none;
-        border: 2px solid darken(#36bd8e, 10%);
-      }
-
-      &:hover {
-        background-color: lighten(#36bd8e, 10%);
-        border: 1px solid darken(#36bd8e, 10%);
-      }
-    }
-  }
-
   .tags {
     a {
       padding-right: 20px;
@@ -112,63 +79,6 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-
-  .row {
-
-    display: flex;
-    align-items: center;
-
-    .logo {
-
-      margin-top: 50px;
-
-      h1 {
-        color: #333;
-        font-size: 60px;
-      }
-    }
-
-    .search {
-
-      display: flex;
-      margin-top: 50px;
-      margin-left: 50px;
-
-      input {
-        background-color: #E9E9E9;
-        padding: 10px 100px 10px 20px;
-        border-radius: 10px;
-        margin-right: 10px;
-        font-size: 1rem;
-        text-align: left;
-        border: 1px solid #888;
-
-        &:focus {
-          outline: none;
-          border: 1px solid #333;
-        }
-      }
-
-      #search-button {
-        background-color: #36bd8e;
-        padding: 10px 40px;
-        border-radius: 10px;
-        font-size: 1rem;
-        border: 1px solid darken(#36bd8e, 10%);
-        color: #f8f8f8;
-
-        &:focus {
-          outline: none;
-          border: 2px solid darken(#36bd8e, 10%);
-        }
-
-        &:hover {
-          background-color: lighten(#36bd8e, 10%);
-          border: 1px solid darken(#36bd8e, 10%);
-        }
-      }
-    }
-  }
 
   .search-results {
     display: flex;
