@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 
 import {actions} from "./actions";
+import {actions as searchActions} from "../search/actions";
 import {SearchTags} from "../search/Search";
 import {TopBar} from "../common/TopBar";
 
@@ -12,11 +13,9 @@ export const PreviewComponent = (props) => {
         return <div>Loading..</div>
     }
 
-    const search = () => null
-
     return <div className="preview">
         <div className="search-container-row">
-            <TopBar search={search}/>
+            <TopBar search={props.search}/>
         </div>
         <div className="preview-content">
             <div className="preview-photo">
@@ -25,7 +24,7 @@ export const PreviewComponent = (props) => {
             <div className="preview-sidebar">
                 <div className="related-searches">
                     <strong>Related Searches:</strong>
-                    <SearchTags search={search} tags={props.photo.tags}/>
+                    <SearchTags search={props.search} tags={props.photo.tags}/>
                 </div>
                 <div className="buy">
                     <button id="buy-button">Buy</button>
@@ -47,8 +46,13 @@ export const Preview = connect(
     },
 
     dispatch => ({
-        loadPreview: id =>
+        loadPreview: id => {
             dispatch(actions.loadPhotoPreview(id))
+        },
+
+        search: searchQuery => {
+            dispatch(searchActions.search(searchQuery))
+        }
     }),
 )(PreviewComponent)
 
