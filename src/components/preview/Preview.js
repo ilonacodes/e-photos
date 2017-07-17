@@ -5,6 +5,7 @@ import {actions} from "./actions";
 import {actions as searchActions} from "../search/actions";
 import {SearchTags} from "../search/Search";
 import {TopBar} from "../common/TopBar";
+import {signUpLink} from "../common/SignUp";
 
 export const PreviewComponent = (props) => {
 
@@ -27,7 +28,9 @@ export const PreviewComponent = (props) => {
                     <SearchTags search={props.search} tags={props.photo.tags}/>
                 </div>
                 <div className="buy">
-                    <button id="buy-button">Buy</button>
+                    <a href={signUpLink}>
+                        <button id="buy-button">Buy</button>
+                    </a>
                 </div>
             </div>
         </div>
