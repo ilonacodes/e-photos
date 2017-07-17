@@ -2,10 +2,10 @@ import React from "react";
 import {connect} from "react-redux";
 
 import {actions} from "./actions";
-import {actions as searchActions} from "../search/actions";
 import {SearchTags} from "../search/Search";
 import {TopBar} from "../common/TopBar";
 import {signUpLink} from "../common/SignUp";
+import {dispatchers} from "../search/dispatchers";
 
 export const PreviewComponent = (props) => {
 
@@ -53,9 +53,7 @@ export const Preview = connect(
             dispatch(actions.loadPhotoPreview(id))
         },
 
-        search: searchQuery => {
-            dispatch(searchActions.search(searchQuery))
-        }
+        search: dispatchers.search(dispatch)
     }),
 )(PreviewComponent)
 

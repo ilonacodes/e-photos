@@ -1,10 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Link} from "react-router";
-
-import {actions} from "./actions";
 import {TopBar} from "../common/TopBar";
 import {Logo} from "../common/Logo";
+import {dispatchers} from "./dispatchers";
 
 export const SearchInput = ({update}) => {
     return <input
@@ -62,11 +61,11 @@ export const Description = ({}) => {
     return <div className="description"><i>The stock of HD-Photos. Find what you need.</i></div>
 }
 
+export const tags = ["science", "art", "books", "city", "hipster"];
+
 export const SearchPageComponent = ({search, searchResults}) => {
 
     if (searchResults.length === 0) {
-
-        const tags = ["science", "art", "books", "city", "hipster"];
 
         return <div className="search-container">
             <Logo />
@@ -92,6 +91,6 @@ export const SearchPage = connect(
     }),
 
     dispatch => ({
-        search: searchQuery => dispatch(actions.search(searchQuery))
+        search: dispatchers.search(dispatch)
     }),
 )(SearchPageComponent)
