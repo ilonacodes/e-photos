@@ -1,0 +1,42 @@
+client (browser or test)
+user clicks search
+       |
+       |
+       |
+       v
+server (sinatra)
+GET /search?query=girl
+--> 200 OK {
+    "search_results": [
+        {
+            src: "https://static.pexels.com/photos/445109/pexels-photo-445109.jpeg",
+            name: "girl",
+            id: 1,
+            tags: ["girl", "woman", "blue", "hat", "nature", "smoke", "trees", "hand", "art"]
+        },
+        {
+            src: "https://static.pexels.com/photos/234541/-ancient-meditation-architecture-234541.jpeg",
+            name: "meditation",
+            id: 5,
+            tags: ["boy", "meditation", "ancient", "girl"]
+        }
+    ]
+}
+
+---
+
+
+client (browser)
+user clicks on search result (photo) to see preview
+       |
+       |
+       |
+       v
+server (sinatra)
+GET /preview/4
+--> 200 OK {
+    src: "https://static.pexels.com/photos/40142/new-york-skyline-manhattan-hudson-40142.jpeg",
+    name: "skyscraper",
+    id: 4,
+    tags: ["skyscraper", "city", "build"]
+}
