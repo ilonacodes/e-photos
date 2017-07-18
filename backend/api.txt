@@ -1,4 +1,4 @@
-client (browser or test)
+client (browser or test )
 user clicks search
        |
        |

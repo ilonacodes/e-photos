@@ -1,28 +1,64 @@
 require "sinatra"
 require "json"
 
+require_relative "photos_fixture"
+
+# db code
+class PhotoStorage
+  def all
+
+    PHOTOS.map do |hash|
+      Photo.new(hash[:id], hash[:name], hash[:src], hash[:tags])
+    end
+
+  end
+end
+
+# domain code
+class Photo
+  attr_reader :id, :name, :src, :tags
+
+  def initialize(id, name, src, tags)
+    @id = id
+    @name = name
+    @tags = tags
+    @src = src
+  end
+end
+
+# domain code
+class SearchService
+  def search(query)
+    photo_storage = PhotoStorage.new
+    photo_storage.all.select do |photo|
+      photo.name.include?(query) ||
+          photo.tags.include?(query)
+    end
+  end
+end
+
+# web/api code
+class PhotoView
+  def render(photo)
+    {
+        id: photo.id,
+        name: photo.name,
+        src: photo.src,
+        tags: photo.tags
+    }
+  end
+end
+
+# web/api code
+search_service = SearchService.new
+photo_view = PhotoView.new
+
+# web/api code
 get "/search" do
   content_type :json
-  {
-      search_results: [
-          {
-              src: "https://static.pexels.com/photos/445109/pexels-photo-445109.jpeg",
-              name: "girl",
-              id: 1,
-              tags: %w(girl woman blue hat nature smoke trees hand art),
-          },
-          {
-              src: "https://static.pexels.com/photos/234541/-ancient-meditation-architecture-234541.jpeg",
-              name: "meditation",
-              id: 5,
-              tags: %w(boy meditation ancient girl),
-          },
-          {
-              src: "https://static.pexels.com/photos/336540/pexels-photo-336540.jpeg",
-              name: "girl",
-              id: 6,
-              tags: %w(girl hipster hair)
-          },
-      ],
-  }.to_json
+
+  query = params[:query]
+  results = search_service.search(query)
+  rendered_results = results.map {|photo| photo_view.render(photo)}
+  {search_results: rendered_results}.to_json
 end

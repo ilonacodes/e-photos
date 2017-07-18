@@ -1,0 +1,43 @@
+Sinatra App [Web/API Layer]
+    (translates API/Http/Web request -> business (domain) input)
+    (translates business (domain) result -> API/Http/Web response)
+
+   get "/search"
+   get "/preview/:id"
+
+   PhotoView
+        #render(photo: Photo)
+            => { src: "...", name: "...", id: "...", tags: [...] }
+
+    |
+    |
+    |
+    v
+
+Application [Domain, Business, Service Layer]
+    (contains core business logic)
+    (should be possible to use within different applications, with different UIs and databases)
+    (it is agnostic to UI structure and DB structure)
+    (model of your business)
+
+   Photo
+        (model)
+
+   SearchService
+        #search(query) => Array<Photo>
+
+   PreviewService
+        #preview(photo_id) => Photo
+
+    |
+    |
+    |
+    v
+
+Storage [Database, Storage, Persistence Layer]
+    (stores and persists data)
+    (allows to query the data)
+
+    PhotoStorage
+        #get(id)
+        #all
