@@ -2,63 +2,12 @@ require "sinatra"
 require "json"
 
 require_relative "photos_fixture"
+require_relative "./db/photo_storage"
+require_relative "./domain/photo"
+require_relative "./domain/search_service"
+require_relative "./web_api/photo_view"
+require_relative "./web_api/search_endpoint"
 
-# db code
-class PhotoStorage
-  def all
-
-    PHOTOS.map do |hash|
-      Photo.new(hash[:id], hash[:name], hash[:src], hash[:tags])
-    end
-
-  end
-end
-
-# domain code
-class Photo
-  attr_reader :id, :name, :src, :tags
-
-  def initialize(id, name, src, tags)
-    @id = id
-    @name = name
-    @tags = tags
-    @src = src
-  end
-end
-
-# domain code
-class SearchService
-  def search(query)
-    photo_storage = PhotoStorage.new
-    photo_storage.all.select do |photo|
-      photo.name.include?(query) ||
-          photo.tags.include?(query)
-    end
-  end
-end
-
-# web/api code
-class PhotoView
-  def render(photo)
-    {
-        id: photo.id,
-        name: photo.name,
-        src: photo.src,
-        tags: photo.tags
-    }
-  end
-end
-
-# web/api code
-search_service = SearchService.new
-photo_view = PhotoView.new
-
-# web/api code
-get "/search" do
-  content_type :json
-
-  query = params[:query]
-  results = search_service.search(query)
-  rendered_results = results.map {|photo| photo_view.render(photo)}
-  {search_results: rendered_results}.to_json
-end
+require_relative "./domain/preview_service"
+require_relative "./domain/photo_not_found_exception"
+require_relative "./web_api/preview_endpoint"

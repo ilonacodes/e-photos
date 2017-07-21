@@ -1,0 +1,2 @@
+class PhotoNotFoundException < RuntimeError
+end
