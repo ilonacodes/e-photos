@@ -2,6 +2,7 @@ search_service = SearchService.new
 photo_view = PhotoView.new
 
 get "/search" do
+  cors
   content_type :json
 
   query = params[:query]

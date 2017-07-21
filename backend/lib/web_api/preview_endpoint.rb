@@ -2,6 +2,7 @@ preview_service = PreviewService.new
 photo_view = PhotoView.new
 
 get "/preview/:id" do
+  cors
   content_type :json
 
   begin

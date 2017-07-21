@@ -1,4 +1,5 @@
 import {photoContent} from "../../Gallery"
+import {config} from "../../config";
 
 export const services = {
     previewService: null,
@@ -18,6 +19,8 @@ export class MockPreviewService {
 
 export class PreviewService {
     fetch(id) {
-        return new MockPreviewService().fetch(id)
+        return fetch(`${config.apiUrl}/preview/${id}`, {
+            method: "get"
+        }).then(responseObj => responseObj.json())
     }
 }

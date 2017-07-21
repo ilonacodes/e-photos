@@ -38,7 +38,8 @@
     "test": "karma start",
     "webpack": "webpack -w",
     "start": "cd public && python -m SimpleHTTPServer",
-    "scss": "sass --watch src/scss/app.scss:public/app.css"
+    "scss": "sass --watch src/scss/app.scss:public/app.css",
+    "start-backend": "cd backend && bundle exec ruby lib/app.rb"
   },
   "author": "",
   "license": "MIT"

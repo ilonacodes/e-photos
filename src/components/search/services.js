@@ -1,4 +1,5 @@
 import {photoContent} from "../../Gallery"
+import {config} from "../../config";
 
 export const services = {
     searchService: null,
@@ -19,6 +20,9 @@ export class MockSearchService {
 
 export class SearchService {
     search(searchQuery) {
-        return new MockSearchService().search(searchQuery)
+        return fetch(`${config.apiUrl}/search?query=${searchQuery}`, {
+            method: "get",
+        }).then(responseObj => responseObj.json())
+            .then(response => response["search_results"])
     }
 }

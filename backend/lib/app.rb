@@ -1,6 +1,8 @@
 require "sinatra"
 require "json"
 
+require_relative "./web_api/cors"
+
 require_relative "photos_fixture"
 require_relative "./db/photo_storage"
 require_relative "./domain/photo"
