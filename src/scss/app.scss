@@ -1,6 +1,8 @@
 @import "_preview";
 @import "_search";
 @import "_top-bar";
+@import "_footer";
+@import "_colors";
 
 * {
   box-sizing: border-box;
@@ -20,7 +22,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50%;
+  height: 55%;
 
   .logo, .description, .search, .tags {
     display: flex;
@@ -47,11 +49,11 @@ body {
     a {
       padding-right: 20px;
       text-decoration: none;
-      color: #51ADED;
+      color: $link-color;
       font-size: 18px;
 
       &:hover {
-        color: darken(#51ADED, 10%);
+        color: darken($link-color, 10%);
       }
     }
   }

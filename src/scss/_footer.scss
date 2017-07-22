@@ -1,0 +1,28 @@
+@import "_colors";
+
+$border-color: #eee;
+
+.pre-footer {
+  margin-bottom: 6rem;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid $border-color;
+  font-size: 20px;
+  background-color: #fff;
+  padding-bottom: 1.5rem;
+
+  .footer-link {
+    text-decoration: none;
+    color: $link-color;
+
+    &:visited {
+      color: $link-color;
+    }
+  }
+}

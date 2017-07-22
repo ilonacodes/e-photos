@@ -4,6 +4,7 @@ import {Link} from "react-router";
 import {TopBar} from "../common/TopBar";
 import {Logo} from "../common/Logo";
 import {dispatchers} from "./dispatchers";
+import {Footer} from "../common/Footer";
 
 export const SearchInput = ({update}) => {
     return <input
@@ -72,6 +73,7 @@ export const SearchPageComponent = ({search, searchResults}) => {
             <Description />
             <Search className="search" search={search}/>
             <SearchTags className="tags" search={search} tags={tags}/>
+            <Footer />
         </div>
 
     } else {
@@ -81,6 +83,7 @@ export const SearchPageComponent = ({search, searchResults}) => {
             <div className="search-results">
                 <SearchResults results={searchResults}/>
             </div>
+            <Footer />
         </div>
     }
 }

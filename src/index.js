@@ -14,6 +14,7 @@ import {SearchService, services as searchServices} from "./components/search/ser
 import {PreviewService, services as previewServices} from "./components/preview/services";
 import {Preview} from "./components/preview/Preview";
 import {previewReducer} from "./components/preview/reducers";
+import {UploadForm} from "./components/upload/UploadForm";
 
 searchServices.searchService = new SearchService()
 previewServices.previewService = new PreviewService()
@@ -36,6 +37,7 @@ const Main =
             <Route path='/' component={SearchPage}/>
             <Route path='/preview/:id' component={Preview}/>
             <Route path='/counter' component={App}/>
+            <Route path='/upload' component={UploadForm}/>
         </Router>
     </Provider>
 
