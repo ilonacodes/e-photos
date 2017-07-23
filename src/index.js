@@ -12,12 +12,15 @@ import {searchReducer} from "./components/search/reducers";
 import {counter} from "./reducer";
 import {SearchService, services as searchServices} from "./components/search/services";
 import {PreviewService, services as previewServices} from "./components/preview/services";
+import {UploadService, services as uploadServices} from "./components/upload/services";
 import {Preview} from "./components/preview/Preview";
 import {previewReducer} from "./components/preview/reducers";
 import {UploadForm} from "./components/upload/UploadForm";
+import {uploadReducer} from "./components/upload/reducers";
 
 searchServices.searchService = new SearchService()
 previewServices.previewService = new PreviewService()
+uploadServices.uploadService = new UploadService()
 
 const store = createStore(
     combineReducers({
@@ -25,6 +28,7 @@ const store = createStore(
         searchResults: searchReducer,
         photos: previewReducer,
         routing: routerReducer,
+        upload: uploadReducer,
     }),
     applyMiddleware(thunk, routerMiddleware(hashHistory)),
 );

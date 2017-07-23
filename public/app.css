@@ -121,13 +121,52 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; }
-  .upload-container .input-form {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: baseline; }
+  width: 100%;
+  height: 80%; }
+  .upload-container .title {
+    align-self: center; }
+  .upload-container form {
+    align-items: flex-start;
+    width: 50%;
+    padding-bottom: 50px; }
+    .upload-container form .input-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-bottom: 30px; }
+      .upload-container form .input-form label {
+        font-size: 1.1rem;
+        padding-bottom: 10px; }
+      .upload-container form .input-form input {
+        background-color: #E9E9E9;
+        border: 1px solid #c8c8c8;
+        padding: 10px 10px;
+        border-radius: 5px;
+        text-align: left;
+        font-size: 1rem; }
+  .upload-container .upload-file input {
+    font-size: 0.9rem;
+    color: #57565e; }
+  .upload-container .upload-button button {
+    background-color: #36bd8e;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #fff;
+    border: 1px solid #2b9570; }
+    .upload-container .upload-button button:focus {
+      outline: none;
+      border: 2px solid #2b9570; }
+    .upload-container .upload-button button:hover {
+      background-color: #57cfa5;
+      border: 1px solid #2b9570; }
 
+@media screen and (min-width: 1000px) {
+  .upload-container form {
+    width: 35%; } }
+@media screen and (max-width: 1000px) {
+  .upload-container form {
+    width: 45%; } }
 * {
   box-sizing: border-box; }
 
@@ -144,7 +183,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 55%; }
+  height: 80%; }
   .search-container .logo, .search-container .description, .search-container .search, .search-container .tags {
     display: flex;
     justify-content: center;
