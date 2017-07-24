@@ -4,6 +4,7 @@
       <w>capybara</w>
       <w>cors</w>
       <w>rubocop</w>
+      <w>securerandom</w>
     </words>
   </dictionary>
 </component>
