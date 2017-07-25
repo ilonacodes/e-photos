@@ -1,6 +1,7 @@
 require "sinatra"
 require "json"
 require "securerandom"
+require "fileutils"
 
 # common web
 require_relative "./web_api/cors"
@@ -22,5 +23,8 @@ require_relative "./domain/photo_not_found_exception"
 require_relative "./web_api/preview_endpoint"
 
 # upload endpoint
+require_relative "./db/file_storage"
+require_relative "./domain/uuid_generator"
+require_relative "./domain/photo_file"
+require_relative "./domain/upload_service"
 require_relative "./web_api/upload_endpoint"
-

@@ -1,12 +1,5 @@
-class UuidGenerator
-  def generate_uuid
-    SecureRandom.uuid
-  end
-end
-
-module UploadEndpoint
-  UUID_GENERATOR = UuidGenerator.new
-end
+file_storage = FileStorage.new
+upload_service = UploadService.new(file_storage)
 
 post "/files" do
   cors
@@ -14,7 +7,16 @@ post "/files" do
 
   status CREATED
 
-  file_id = UploadEndpoint::UUID_GENERATOR.generate_uuid
-  {file_id: file_id}.to_json
+  tempfile = params[:file][:tempfile]
+  photo_file = upload_service.upload(tempfile)
+  {file_id: photo_file.id}.to_json
 
+end
+
+get "/files/:file_id" do
+  cors
+
+  file_id = params[:file_id]
+  photo_file = file_storage.get(file_id)
+  send_file photo_file.path
 end
