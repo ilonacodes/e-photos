@@ -10,7 +10,7 @@ import {MOCK_CREATED_PHOTO_ID, MOCK_FILE_ID, MockUploadService, services} from "
 
 const mockStore = configureMockStore([thunk])
 
-fdescribe('UploadForm - behavior', () => {
+describe('UploadForm - behavior', () => {
     let uploadService
 
     beforeEach(() => {

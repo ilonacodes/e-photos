@@ -1,3 +1,4 @@
+import {config} from "../../config";
 export const services = {
     uploadService: null,
 }
@@ -23,8 +24,16 @@ export class MockUploadService {
 
 export class UploadService {
     uploadPhotoFile(file) {
-        return new MockUploadService().uploadPhotoFile(file)
+        const data = new FormData()
+        data.append('file', file)
+
+        return fetch(`${config.apiUrl}/files`, {
+            method: "post",
+            body: data
+        }).then(responseObj => responseObj.json())
+            .then(response => response["file_id"])
     }
+
 
     createPhoto(photo) {
         return new MockUploadService().createPhoto(photo)
