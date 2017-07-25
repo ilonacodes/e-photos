@@ -1,10 +1,24 @@
 import {t} from "./actions";
 
-export const uploadReducer = (state = {fileId: null}, action = {}) => {
+export const initState = {
+    fileId: null,
+    name: '',
+    tags: '',
+}
 
+export const uploadReducer = (state = initState, action = {}) => {
     switch (action.type) {
-        case t.CREATE_PHOTO_SUCCESS:
-            return {fileId: action.payload}
+        case t.UPLOAD_PHOTO_FILE_SUCCESS:
+            return {
+                ...state,
+                fileId: action.payload,
+            }
+
+        case t.UPDATE_FORM:
+            return {
+                ...state,
+                ...action.payload,
+            }
 
         default:
             return state

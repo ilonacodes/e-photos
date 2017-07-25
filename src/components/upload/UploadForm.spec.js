@@ -7,6 +7,7 @@ import {push} from "react-router-redux";
 import {UploadForm} from "./UploadForm";
 import {actions} from "./actions";
 import {MOCK_CREATED_PHOTO_ID, MOCK_FILE_ID, MockUploadService, services} from "./services";
+import {initState} from "./reducers";
 
 const mockStore = configureMockStore([thunk])
 
@@ -20,7 +21,7 @@ describe('UploadForm - behavior', () => {
 
     it('uploads photo file', () => {
         const store = mockStore({
-            upload: {fileId: null}
+            upload: initState,
         })
         const component = shallow(<UploadForm store={store}/>).dive()
 
@@ -39,16 +40,15 @@ describe('UploadForm - behavior', () => {
 
     it('creates photo', () => {
         const store = mockStore({
-            upload: {fileId: "42"}
+            upload: {
+                ...initState,
+                name: 'my photo',
+                tags: 'selfie, photo, art',
+                fileId: "42",
+            }
         })
         const component = shallow(<UploadForm store={store}/>).dive()
 
-        component.find("input[name='name']").simulate("change", {
-            target: {value: 'my photo'},
-        })
-        component.find("input[name='tags']").simulate("change", {
-            target: {value: 'selfie, photo, art'},
-        })
         component.find("button").simulate('click')
 
         expect(uploadService.photoCreated).toEqual({
@@ -60,6 +60,42 @@ describe('UploadForm - behavior', () => {
         expect(store.getActions()).toEqual([
             actions.createPhotoSuccess(MOCK_CREATED_PHOTO_ID),
             push(`/preview/${MOCK_CREATED_PHOTO_ID}`)
+        ])
+    })
+
+    it("updates form for name field", () => {
+        const store = mockStore({
+            upload: {
+                ...initState,
+                name: "Road",
+            }
+        })
+        const component = shallow(<UploadForm store={store}/>).dive()
+
+        component.find("input[name='name']").simulate("change", {
+            target: {value: 'my photo'},
+        })
+
+        expect(store.getActions()).toEqual([
+            actions.updateForm({name: "my photo"}),
+        ])
+    })
+
+    it("updates form for tags field", () => {
+        const store = mockStore({
+            upload: {
+                ...initState,
+                tags: "hello, world",
+            }
+        })
+        const component = shallow(<UploadForm store={store}/>).dive()
+
+        component.find("input[name='tags']").simulate("change", {
+            target: {value: "selfie, photo, art"},
+        })
+
+        expect(store.getActions()).toEqual([
+            actions.updateForm({tags: "selfie, photo, art"}),
         ])
     })
 })

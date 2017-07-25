@@ -6,4 +6,23 @@ class PhotoStorage
     end
 
   end
+
+  def save(photo)
+
+    photo.id = PHOTOS.size + 1
+
+    PHOTOS << {
+        id: photo.id,
+        name: photo.name,
+        src: photo.src,
+        tags: photo.tags
+    }
+
+    photo
+
+  end
+
+  def delete(id)
+    PHOTOS.delete_if { |p| p[:id] == id }
+  end
 end

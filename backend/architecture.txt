@@ -23,11 +23,17 @@ Application [Domain, Business, Service Layer]
    Photo
         (model)
 
+   CreatePhotoRequest
+        (model): name, tags, file_id
+
    SearchService
         #search(query) => Array<Photo>
 
    PreviewService
         #preview(photo_id) => Photo
+
+   PhotoService
+        #create(create_photo_request: CreatePhotoRequest) => Photo
 
     |
     |
@@ -39,5 +45,6 @@ Storage [Database, Storage, Persistence Layer]
     (allows to query the data)
 
     PhotoStorage
-        #get(id)
-        #all
+        #get(id) => Photo
+        #all => Array<Photo>
+        #save(photo: Photo) => Photo

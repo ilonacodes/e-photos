@@ -28,3 +28,8 @@ require_relative "./domain/uuid_generator"
 require_relative "./domain/photo_file"
 require_relative "./domain/upload_service"
 require_relative "./web_api/upload_endpoint"
+
+# create endpoint
+require_relative "./domain/create_photo_request.rb"
+require_relative "./domain/photo_service.rb"
+require_relative "./web_api/create_photo_endpoint"

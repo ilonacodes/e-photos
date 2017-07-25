@@ -6,7 +6,8 @@ export const t = {
     UPLOAD_PHOTO_FILE: "UPLOAD_PHOTO_FILE",
     UPLOAD_PHOTO_FILE_SUCCESS: "UPLOAD_PHOTO_FILE_SUCCESS",
     CREATE_PHOTO: "CREATE_PHOTO",
-    CREATE_PHOTO_SUCCESS: "CREATE_PHOTO_SUCCESS"
+    CREATE_PHOTO_SUCCESS: "CREATE_PHOTO_SUCCESS",
+    UPDATE_FORM: "UPDATE_FORM",
 }
 
 export const actions = {
@@ -38,5 +39,10 @@ export const actions = {
         type: t.CREATE_PHOTO_SUCCESS,
         payload,
     }),
+
+    updateForm: payload => ({
+        type: t.UPDATE_FORM,
+        payload,
+    })
 }
 

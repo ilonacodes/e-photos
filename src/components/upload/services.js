@@ -34,8 +34,14 @@ export class UploadService {
             .then(response => response["file_id"])
     }
 
-
     createPhoto(photo) {
-        return new MockUploadService().createPhoto(photo)
+        return fetch(`${config.apiUrl}/photos`, {
+            method: "post",
+            body: JSON.stringify({
+                ...photo,
+                file_id: photo.fileId,
+            }),
+        }).then(responseObj => responseObj.json())
+            .then(photo => photo.id)
     }
 }

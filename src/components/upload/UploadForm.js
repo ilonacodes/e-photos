@@ -2,10 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {actions} from "./actions";
 
-export const UploadFormComponent = ({uploadFile, fileId, createPhoto}) => {
-    let name = ''
-    let tags = ''
-
+export const UploadFormComponent = ({uploadFile, fileId, createPhoto, name, tags, updateForm}) => {
     const upload = e => uploadFile(e.target.files[0])
     const create = () => createPhoto({
         name,
@@ -21,12 +18,12 @@ export const UploadFormComponent = ({uploadFile, fileId, createPhoto}) => {
             <div className="input-form">
                 <label>Photo name</label>
                 <input type="text" name="name"
-                        onChange={e => name = e.target.value}/>
+                        onChange={e => updateForm({name: e.target.value})}/>
             </div>
             <div className="input-form">
                 <label>Tags (separated by comma)</label>
                 <input type="text" name="tags"
-                       onChange={e => tags = e.target.value}/>
+                       onChange={e => updateForm({tags: e.target.value})}/>
             </div>
             <div className="upload-file">
                 <input type="file"
@@ -42,6 +39,8 @@ export const UploadFormComponent = ({uploadFile, fileId, createPhoto}) => {
 export const UploadForm = connect(
     (state) => ({
         fileId: state.upload.fileId,
+        name: state.upload.name,
+        tags: state.upload.tags,
     }),
 
     (dispatch) => ({
@@ -52,5 +51,9 @@ export const UploadForm = connect(
         createPhoto: photo => {
             dispatch(actions.createPhoto(photo))
         },
+
+        updateForm: payload => {
+            dispatch(actions.updateForm(payload))
+        }
     })
 )(UploadFormComponent)
