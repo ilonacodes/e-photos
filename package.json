@@ -36,6 +36,7 @@
   },
   "scripts": {
     "test": "karma start",
+    "test-ci": "karma start --single-run",
     "webpack": "webpack -w",
     "start": "cd public && python -m SimpleHTTPServer",
     "scss": "sass --watch src/scss/app.scss:public/app.css",
