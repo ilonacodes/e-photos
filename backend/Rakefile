@@ -17,16 +17,23 @@ end
 
 root = File.expand_path '..', __FILE__
 DatabaseTasks.env = ENV['ENV'] || 'development'
-DatabaseTasks.database_configuration = YAML.load(File.read(File.join(root, 'config/database.yml')))
 DatabaseTasks.db_dir = File.join root, 'db'
 DatabaseTasks.fixtures_path = File.join root, 'test/fixtures'
 DatabaseTasks.migrations_paths = [File.join(root, 'db/migrate')]
 DatabaseTasks.seed_loader = Seeder.new File.join root, 'db/seeds.rb'
 DatabaseTasks.root = root
 
-task :environment do
-  ActiveRecord::Base.configurations = DatabaseTasks.database_configuration
-  ActiveRecord::Base.establish_connection DatabaseTasks.env.to_sym
+if ENV['DATABASE_URL']
+  task :environment do
+    ActiveRecord::Base.establish_connection ENV['DATABASE_URL']
+  end
+else
+  DatabaseTasks.database_configuration = YAML.load(File.read(File.join(root, 'config/database.yml')))
+
+  task :environment do
+    ActiveRecord::Base.configurations = DatabaseTasks.database_configuration
+    ActiveRecord::Base.establish_connection DatabaseTasks.env.to_sym
+  end
 end
 
 load 'active_record/railties/databases.rake'
