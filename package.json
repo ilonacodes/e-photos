@@ -38,6 +38,7 @@
     "test": "karma start",
     "test-ci": "karma start --single-run",
     "webpack": "webpack -w",
+    "webpack:prod": "webpack -p",
     "start": "cd public && python -m SimpleHTTPServer",
     "scss": "sass --watch src/scss/app.scss:public/app.css",
     "start-backend": "cd backend && bundle exec ruby lib/app.rb"
