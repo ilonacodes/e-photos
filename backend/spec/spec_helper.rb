@@ -1,6 +1,8 @@
 require "rspec"
 
-ENV['ENV'] = 'test'
+if ENV['ENV'] != 'test' && ENV['ENV'] != 'travis'
+  ENV['ENV'] = 'test'
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
