@@ -5,7 +5,7 @@ RSpec.describe "preview feature", type: :feature do
     visit("http://localhost:8000/#/preview/6")
     wait_for_dom
 
-    preview_photo = first(".preview img")
+    preview_photo = first(".preview img", visible: false)
 
     actual = preview_photo['src']
     expected = "https://static.pexels.com/photos/336540/pexels-photo-336540.jpeg"
@@ -23,7 +23,7 @@ RSpec.describe "preview feature", type: :feature do
     first(".search-result .search-result-link").click
     wait_for_dom
 
-    preview_photo = first(".preview img")
+    preview_photo = first(".preview img", visible: false)
 
     actual = preview_photo['src']
     expected = "https://static.pexels.com/photos/445109/pexels-photo-445109.jpeg"

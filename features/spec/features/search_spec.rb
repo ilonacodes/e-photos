@@ -16,6 +16,7 @@ RSpec.describe "search feature", type: :feature do
     actual = results.map { |img| img['src'] }
     expected = %w(
       https://static.pexels.com/photos/445109/pexels-photo-445109.jpeg
+      https://static.pexels.com/photos/234541/-ancient-meditation-architecture-234541.jpeg
       https://static.pexels.com/photos/336540/pexels-photo-336540.jpeg
     )
     expect(actual).to eq(expected)
