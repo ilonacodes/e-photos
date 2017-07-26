@@ -3,4 +3,3 @@ node_modules
 /.idea/workspace.xml
 /backend/uploads/*
 .rakeTasks
-/public/bundle.js
