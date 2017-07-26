@@ -3,7 +3,7 @@
 set -e
 
 # kill all sub-processes automatically when this script exits for any reason
-trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+trap "trap - SIGTERM && kill -- -$$ || true" SIGINT SIGTERM EXIT
 
 export ENV=${CUSTOM_ENV:-travis}
 
