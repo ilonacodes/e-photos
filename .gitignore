@@ -4,3 +4,4 @@ node_modules
 /backend/uploads/*
 .rakeTasks
 bin/geckodriver*
+/features/spec/examples.txt
