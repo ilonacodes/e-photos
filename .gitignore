@@ -5,3 +5,4 @@ node_modules
 .rakeTasks
 bin/geckodriver*
 /features/spec/examples.txt
+/backend/spec/examples.txt
