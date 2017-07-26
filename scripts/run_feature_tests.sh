@@ -16,7 +16,7 @@ cd ..
 # setup & start backend app
 cd backend
 
-mysql < scripts/init-db-on-travis.sql
+mysql $MYSQL_ARGS < scripts/init-db-on-travis.sql || true
 
 bundle install
 
@@ -37,9 +37,11 @@ chmod a+x bin/geckodriver
 
 export PATH="$PATH:$PWD/bin"
 
-export DISPLAY=:99.0
-sh -e /etc/init.d/xvfb start
-sleep 3                             # give xvfb some time to start
+if [[ -f /etc/init.d/xvfb ]]; then
+	export DISPLAY=:99.0
+	sh -e /etc/init.d/xvfb start
+	sleep 3                             # give xvfb some time to start
+fi
 
 cd features
 bundle install

@@ -1,14 +1,14 @@
 development:
   api_url: 'http://localhost:4567'
-  frontend_origin: 'http://localhost:8080'
+  frontend_origin: 'http://localhost:8000'
 
 test:
   api_url: 'http://localhost:4567'
-  frontend_origin: 'http://localhost:8080'
+  frontend_origin: 'http://localhost:8000'
 
 travis:
   api_url: 'http://localhost:4567'
-  frontend_origin: 'http://localhost:8080'
+  frontend_origin: 'http://localhost:8000'
 
 production:
   api_url: 'https://ephotos.herokuapp.com'
