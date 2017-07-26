@@ -29,6 +29,18 @@ sleep 3
 cd ..
 
 # setup and run feature tests
+
+mkdir -p bin
+curl -L https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz > bin/geckodriver.tar.gz
+(cd bin && tar -xf geckodriver.tar.gz)
+chmod a+x bin/geckodriver
+
+export PATH="./bin/:$PATH"
+
+export DISPLAY=:99.0
+sh -e /etc/init.d/xvfb start
+sleep 3                             # give xvfb some time to start
+
 cd features
 bundle install
 bundle exec rspec
