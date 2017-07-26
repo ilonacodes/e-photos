@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -e +x
 
 # kill all sub-processes automatically when this script exits for any reason
 trap "trap - SIGTERM && kill -- -$$ || true" SIGINT SIGTERM EXIT
