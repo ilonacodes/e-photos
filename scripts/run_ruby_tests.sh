@@ -2,9 +2,9 @@
 
 set -e
 
-./scripts/init-db.sh
-
 cd backend
+
+./scripts/init-db.sh
 
 bundle install
 
