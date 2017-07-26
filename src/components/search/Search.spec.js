@@ -4,7 +4,7 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import {push} from "react-router-redux";
 
-import {Search, SearchButton, SearchInput, SearchPage, SearchResult, tags} from "./Search";
+import {Search, SearchButton, SearchInput, SearchPage, SearchResult, SearchResults, SearchTags, tags} from "./Search";
 import {actions} from "./actions";
 import {MockSearchService, services} from "./services";
 import {photoContent} from "../../Gallery";
@@ -16,13 +16,11 @@ describe('SearchPage - behavior', () => {
         services.searchService = new MockSearchService(photoContent)
     })
 
-    fit('dispatches a search action when button is pressed', () => {
+    it('dispatches a search action when button is pressed', () => {
         const store = mockStore({
             searchResults: [],
         })
         const component = shallow(<SearchPage store={store}/>).dive()
-        console.log(component.debug())
-        console.log(component.html())
         const searchComponent = component.find(Search).dive()
         const inputComponent = searchComponent.find(SearchInput).dive()
         const buttonComponent = searchComponent.find(SearchButton).dive()
@@ -47,9 +45,9 @@ describe('SearchPage - behavior', () => {
             searchResults: [],
         })
         const component = shallow(<SearchPage store={store}/>).dive()
-        const searchComponent = component.find('Search').dive()
-        const inputComponent = searchComponent.find('SearchInput').dive()
-        const buttonComponent = searchComponent.find('SearchButton').dive()
+        const searchComponent = component.find(Search).dive()
+        const inputComponent = searchComponent.find(SearchInput).dive()
+        const buttonComponent = searchComponent.find(SearchButton).dive()
 
         inputComponent.find('input').simulate('change', {
             target: {
@@ -72,7 +70,7 @@ describe('SearchPage - behavior', () => {
         })
 
         const component = shallow(<SearchPage store={store}/>).dive()
-        const tagsComponent = component.find('SearchTags').dive()
+        const tagsComponent = component.find(SearchTags).dive()
 
         const actual = tagsComponent.find('a').map(tag => tag.text())
         const expected = tags
@@ -86,7 +84,7 @@ describe('SearchPage - behavior', () => {
         })
 
         const component = shallow(<SearchPage store={store}/>).dive()
-        const tagsComponent = component.find('SearchTags').dive()
+        const tagsComponent = component.find(SearchTags).dive()
 
         tagsComponent.find('a').first().simulate('click')
         const actual = store.getActions()
@@ -107,10 +105,10 @@ describe('SearchPage - behavior', () => {
         })
 
         const component = shallow(<SearchPage store={store}/>).dive()
-        const resultsComponent = component.find('SearchResults').dive()
+        const resultsComponent = component.find(SearchResults).dive()
 
         const actual = resultsComponent
-            .find('SearchResult')
+            .find(SearchResult)
             .map(photo => photo.prop('photo').src)
 
         const expected = [
