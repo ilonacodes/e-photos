@@ -2,12 +2,12 @@
 
 set -e
 
-mysql -e 'create database if not exists ephotos_test;'
+./scripts/init-db.sh
 
 cd backend
 
 bundle install
 
-ENV=travis bundle exec rake db:migrate
-ENV=travis bundle exec rake db:seed
-ENV=travis bundle exec rspec
+ENV=test bundle exec rake db:migrate
+ENV=test bundle exec rake db:seed
+ENV=test bundle exec rspec
