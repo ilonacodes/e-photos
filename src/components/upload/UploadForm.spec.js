@@ -34,8 +34,76 @@ describe('UploadForm - behavior', () => {
         expect(uploadService.lastFileUploaded).toEqual("file.png")
 
         expect(store.getActions()).toEqual([
+            actions.uploadPhotoFilePending(),
             actions.uploadPhotoFileSuccess(MOCK_FILE_ID),
         ])
+    })
+
+    it('has button disabled when there is no fileId available', () => {
+        const store = mockStore({
+            upload: {
+                ...initState,
+                fileId: null,
+            },
+        })
+        const component = shallow(<UploadForm store={store}/>).dive()
+
+        const disabled = component.find('button').props().disabled
+
+        expect(disabled).toBeTruthy()
+    })
+
+    it('has button enabled when there is fileId available', () => {
+        const store = mockStore({
+            upload: {
+                ...initState,
+                fileId: '42',
+            },
+        })
+        const component = shallow(<UploadForm store={store}/>).dive()
+
+        const disabled = component.find('button').props().disabled
+
+        expect(disabled).toBeFalsy()
+    })
+
+    it('shows uploading message instead of file input when upload is pending', () => {
+        const store = mockStore({
+            upload: {
+                ...initState,
+                uploadPending: true,
+            },
+        })
+        const component = shallow(<UploadForm store={store}/>).dive()
+
+        const fileInput = component.find('input[type="file"]')
+
+        expect(fileInput.exists()).toBeFalsy()
+
+        const actual = component.find('.upload-file .uploading')
+
+        expect(actual.text()).toEqual("Uploading...")
+
+    })
+
+    it('shows uploaded message instead of file input when upload is finished', () => {
+        const store = mockStore({
+            upload: {
+                ...initState,
+                uploadPending: false,
+                fileId: '42',
+            },
+        })
+        const component = shallow(<UploadForm store={store}/>).dive()
+
+        const fileInput = component.find('input[type="file"]')
+
+        expect(fileInput.exists()).toBeFalsy()
+
+        const actual = component.find('.upload-file .uploaded')
+
+        expect(actual.text()).toEqual("Upload completed!")
+
     })
 
     it('creates photo', () => {
