@@ -12,4 +12,4 @@ travis:
 
 production:
   api_url: 'https://ephotos.herokuapp.com'
-  frontend_origin: 'http://www.ilonacodes.com/e-photos'
+  frontend_origin: 'http://www.ilonacodes.com'
