@@ -9,6 +9,8 @@ RSpec.describe "search feature", type: :feature do
     click_on(id: "search-button")
     wait_for_dom
 
+    puts page.body
+
     first(".search-result")
     results = all(".search-result img")
     expect(results).not_to be_empty
