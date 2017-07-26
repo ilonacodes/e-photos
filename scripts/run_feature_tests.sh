@@ -43,4 +43,8 @@ sleep 3                             # give xvfb some time to start
 
 cd features
 bundle install
+
+echo "Just checking search endpoint works:"
+curl -vvv http://localhost:4567/search?query=girl
+
 bundle exec rspec
