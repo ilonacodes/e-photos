@@ -4,7 +4,7 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import {push} from "react-router-redux";
 
-import {SearchPage, SearchResult, tags} from "./Search";
+import {Search, SearchButton, SearchInput, SearchPage, SearchResult, tags} from "./Search";
 import {actions} from "./actions";
 import {MockSearchService, services} from "./services";
 import {photoContent} from "../../Gallery";
@@ -16,16 +16,16 @@ describe('SearchPage - behavior', () => {
         services.searchService = new MockSearchService(photoContent)
     })
 
-    it('dispatches a search action when button is pressed', () => {
+    fit('dispatches a search action when button is pressed', () => {
         const store = mockStore({
             searchResults: [],
         })
         const component = shallow(<SearchPage store={store}/>).dive()
         console.log(component.debug())
         console.log(component.html())
-        const searchComponent = component.find('Search').dive()
-        const inputComponent = searchComponent.find('SearchInput').dive()
-        const buttonComponent = searchComponent.find('SearchButton').dive()
+        const searchComponent = component.find(Search).dive()
+        const inputComponent = searchComponent.find(SearchInput).dive()
+        const buttonComponent = searchComponent.find(SearchButton).dive()
 
         inputComponent.find('input').simulate('change', {
             target: {
