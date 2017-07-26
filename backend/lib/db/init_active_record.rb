@@ -1,12 +1,10 @@
 require 'active_record'
 require 'yaml'
 
-ENV['ENV'] ||= 'development'
-
 root = File.expand_path '../../..', __FILE__
 config = YAML.load(File.read(File.join(root, 'config/database.yml')))[ENV['ENV']]
 
-if ENV['DATABASE_URL']
+if ENV['DATABASE_URL'] && ENV['ENV'] == 'production'
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 else
   ActiveRecord::Base.establish_connection(

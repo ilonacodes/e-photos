@@ -1,0 +1,11 @@
+development:
+  api_url: 'http://localhost:4567'
+
+test:
+  api_url: 'http://localhost:4567'
+
+travis:
+  api_url: 'http://localhost:4567'
+
+production:
+  api_url: 'https://ephotos.herokuapp.com'

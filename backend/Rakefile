@@ -23,7 +23,7 @@ DatabaseTasks.migrations_paths = [File.join(root, 'db/migrate')]
 DatabaseTasks.seed_loader = Seeder.new File.join root, 'db/seeds.rb'
 DatabaseTasks.root = root
 
-if ENV['DATABASE_URL']
+if ENV['DATABASE_URL'] && ENV['ENV'] == 'production'
   task :environment do
     ActiveRecord::Base.establish_connection ENV['DATABASE_URL']
   end

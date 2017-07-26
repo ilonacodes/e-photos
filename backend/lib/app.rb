@@ -1,9 +1,13 @@
+ENV['ENV'] ||= 'development'
+
 require "sinatra"
 require "json"
 require "securerandom"
 require "fileutils"
+require "yaml"
 
 # config
+require_relative "./config"
 require_relative "./db/init_active_record"
 
 # common web
