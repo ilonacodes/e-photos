@@ -160,6 +160,9 @@
     .upload-container .upload-button button:hover {
       background-color: #57cfa5;
       border: 1px solid #2b9570; }
+    .upload-container .upload-button button:disabled, .upload-container .upload-button button[disabled] {
+      background-color: #ccc;
+      border: 1px solid #b3b3b3; }
 
 @media screen and (min-width: 1000px) {
   .upload-container form {
