@@ -46,5 +46,6 @@ Storage [Database, Storage, Persistence Layer]
 
     PhotoStorage
         #get(id) => Photo
+        #search_by_name_or_tag(query) => Array<Photo>
         #all => Array<Photo>
         #save(photo: Photo) => Photo
