@@ -35,7 +35,7 @@ curl -L https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodr
 (cd bin && tar -xf geckodriver.tar.gz)
 chmod a+x bin/geckodriver
 
-export PATH="./bin/:$PATH"
+export PATH="$PATH:$PWD/bin"
 
 export DISPLAY=:99.0
 sh -e /etc/init.d/xvfb start
