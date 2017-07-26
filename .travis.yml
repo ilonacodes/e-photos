@@ -1,6 +1,6 @@
 matrix:
   include:
-  - rvm: 2.4.1p111
+  - rvm: 2.4.0
     script: scripts/run_ruby_tests.sh
     services:
     - mysql
