@@ -21,6 +21,8 @@ describe('SearchPage - behavior', () => {
             searchResults: [],
         })
         const component = shallow(<SearchPage store={store}/>).dive()
+        console.log(component.debug())
+        console.log(component.html())
         const searchComponent = component.find('Search').dive()
         const inputComponent = searchComponent.find('SearchInput').dive()
         const buttonComponent = searchComponent.find('SearchButton').dive()
