@@ -7,6 +7,10 @@ class Config
   def api_url
     @config['api_url']
   end
+
+  def frontend_origin
+    @config['frontend_origin']
+  end
 end
 
 CONFIG = Config.new

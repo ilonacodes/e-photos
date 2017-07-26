@@ -21,6 +21,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "enzyme": "^2.8.2",
+    "gh-pages": "^1.0.0",
     "jasmine-core": "^2.6.1",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.1.1",
@@ -41,8 +42,10 @@
     "webpack:prod": "webpack -p",
     "start": "cd public && python -m SimpleHTTPServer",
     "scss": "sass --watch src/scss/app.scss:public/app.css",
-    "start-backend": "cd backend && bundle exec ruby lib/app.rb"
+    "start-backend": "cd backend && bundle exec ruby lib/app.rb",
+    "deploy-to-gh-pages": "gh-pages -d public"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "http://ilonacodes.github.io/e-photos"
 }
