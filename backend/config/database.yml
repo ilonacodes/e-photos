@@ -11,3 +11,11 @@ test:
   database: 'ephotos_test'
   username: 'ephotos'
   password: 'ephotos'
+
+travis:
+  adapter:  'mysql2'
+  host:     'localhost'
+  database: 'ephotos_test'
+  username: 'travis'
+  password: ''
+  encoding: 'utf8'
