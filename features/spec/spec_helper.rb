@@ -1,10 +1,14 @@
 require "capybara/rspec"
 
-Capybara.default_driver = :selenium
-Capybara.default_max_wait_time = 5
+Capybara.configure do |config|
+  config.default_driver = :selenium
+  config.default_max_wait_time = 15
+  config.wait_on_first_by_default = true
+  config.ignore_hidden_elements = false
+end
 
 module WaitForDom
-  def wait_for_dom(timeout = Capybara.default_max_wait_time)
+  def wait_for_dom
     uuid = SecureRandom.uuid
     page.find("body")
     script = <<-EOS
