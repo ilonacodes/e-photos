@@ -1,14 +1,14 @@
 example_id                                | status | run_time        |
 ----------------------------------------- | ------ | --------------- |
-./spec/create_photo_endpoint_spec.rb[1:1] | passed | 0.00063 seconds |
-./spec/create_photo_endpoint_spec.rb[1:2] | passed | 0.00282 seconds |
-./spec/preview_spec.rb[1:1]               | passed | 0.00102 seconds |
-./spec/preview_spec.rb[1:2]               | passed | 0.00072 seconds |
-./spec/preview_spec.rb[1:3]               | passed | 0.00162 seconds |
-./spec/preview_spec.rb[1:4]               | passed | 0.00081 seconds |
-./spec/search_spec.rb[1:1]                | passed | 0.0267 seconds  |
-./spec/search_spec.rb[1:2]                | passed | 0.00475 seconds |
-./spec/search_spec.rb[1:3]                | passed | 0.00256 seconds |
-./spec/upload_spec.rb[1:1]                | passed | 0.00376 seconds |
-./spec/upload_spec.rb[1:2]                | passed | 0.00195 seconds |
-./spec/upload_spec.rb[1:3]                | passed | 0.00949 seconds |
+./spec/create_photo_endpoint_spec.rb[1:1] | passed | 0.01686 seconds |
+./spec/create_photo_endpoint_spec.rb[1:2] | passed | 0.00621 seconds |
+./spec/preview_spec.rb[1:1]               | passed | 0.00157 seconds |
+./spec/preview_spec.rb[1:2]               | passed | 0.0286 seconds  |
+./spec/preview_spec.rb[1:3]               | passed | 0.00071 seconds |
+./spec/preview_spec.rb[1:4]               | passed | 0.00275 seconds |
+./spec/search_spec.rb[1:1]                | passed | 0.0047 seconds  |
+./spec/search_spec.rb[1:2]                | passed | 0.00382 seconds |
+./spec/search_spec.rb[1:3]                | passed | 0.00602 seconds |
+./spec/upload_spec.rb[1:1]                | passed | 0.00271 seconds |
+./spec/upload_spec.rb[1:2]                | passed | 0.00382 seconds |
+./spec/upload_spec.rb[1:3]                | passed | 0.00649 seconds |

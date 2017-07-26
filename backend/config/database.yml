@@ -1,0 +1,13 @@
+development:
+  adapter:  'mysql2'        # or 'postgresql' or 'sqlite3' or 'oracle_enhanced'
+  host:     'localhost'
+  database: 'ephotos_dev'
+  username: 'ephotos'
+  password: 'ephotos'
+
+test:
+  adapter:  'mysql2'        # or 'postgresql' or 'sqlite3' or 'oracle_enhanced'
+  host:     'localhost'
+  database: 'ephotos_test'
+  username: 'ephotos'
+  password: 'ephotos'

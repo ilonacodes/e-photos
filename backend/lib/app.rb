@@ -3,6 +3,9 @@ require "json"
 require "securerandom"
 require "fileutils"
 
+# config
+require_relative "./db/init_active_record"
+
 # common web
 require_relative "./web_api/cors"
 require_relative "./web_api/utils"

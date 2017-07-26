@@ -2,3 +2,4 @@ node_modules
 .sass-cache/
 /.idea/workspace.xml
 /backend/uploads/*
+.rakeTasks

@@ -1,28 +1,29 @@
+require_relative 'photo_model'
+
 class PhotoStorage
   def all
 
-    PHOTOS.map do |hash|
-      Photo.new(hash[:id], hash[:name], hash[:src], hash[:tags])
+    PhotoModel.all.map do |model|
+      Photo.new(model.id, model.name, model.src, model.split_tags)
     end
 
   end
 
   def save(photo)
 
-    photo.id = PHOTOS.size + 1
+    photo_model = PhotoModel.create(
+      name: photo.name,
+      src: photo.src,
+      tags: photo.tags.join(","),
+    )
 
-    PHOTOS << {
-        id: photo.id,
-        name: photo.name,
-        src: photo.src,
-        tags: photo.tags
-    }
+    photo.id = photo_model.id
 
     photo
 
   end
 
   def delete(id)
-    PHOTOS.delete_if { |p| p[:id] == id }
+    PhotoModel.delete(id)
   end
 end

@@ -12,7 +12,8 @@ RSpec.describe "Create Photo API" do
   end
 
   after do
-    PhotoStorage.new.delete(11)
+    photo_model = PhotoModel.last
+    PhotoStorage.new.delete(photo_model.id)
   end
 
   it "creates a photo" do
@@ -28,9 +29,10 @@ RSpec.describe "Create Photo API" do
 
     expect(last_response.status).to eq(201)
 
+    last_model = PhotoModel.last
     actual = JSON.parse(last_response.body)
     expect(actual).to eq({
-                             "id" => 11,
+                             "id" => last_model.id,
                              "name" => "my photo",
                              "tags" => %w(selfie photo art),
                              "src" => "http://localhost:4567/files/27"
@@ -48,13 +50,15 @@ RSpec.describe "Create Photo API" do
     post "/photos", photo_request.to_json,
          {"CONTENT_TYPE" => "application/json"}
 
-    get "/preview/11"
+    last_model = PhotoModel.last
+
+    get "/preview/#{last_model.id}"
 
     expect(last_response.status).to eq(200)
 
     actual = JSON.parse(last_response.body)
     expect(actual).to eq({
-                             "id" => 11,
+                             "id" => last_model.id,
                              "name" => "my photo",
                              "tags" => %w(selfie photo art),
                              "src" => "http://localhost:4567/files/27"
