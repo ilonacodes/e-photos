@@ -4,10 +4,10 @@ set -e
 
 cd backend
 
-./scripts/init-db.sh
+mysql < scripts/init-db-on-travis.sql
 
 bundle install
 
-ENV=test bundle exec rake db:migrate
-ENV=test bundle exec rake db:seed
-ENV=test bundle exec rspec
+ENV=travis bundle exec rake db:migrate
+ENV=travis bundle exec rake db:seed
+ENV=travis bundle exec rspec
